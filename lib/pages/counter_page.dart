@@ -11,10 +11,22 @@ class _CounterPageState extends State<CounterPage> {
   // variable
   int _counter = 0;
 
-  // method
+  // methods
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
+  void _resetCounter() {
+    setState(() {
+      _counter = 0;
     });
   }
 
@@ -31,10 +43,23 @@ class _CounterPageState extends State<CounterPage> {
               style: const TextStyle(fontSize: 50),
             ),
             ElevatedButton(
-                onPressed: () {
-                  _incrementCounter();
-                },
-                child: const Text("Increment Counter"))
+              onPressed: () {
+                _incrementCounter();
+              },
+              child: const Text("Increment Counter"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _decrementCounter();
+              },
+              child: const Text("Decrement Counter"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _resetCounter();
+              },
+              child: const Text("Reset Counter"),
+            )
           ],
         ),
       ),
